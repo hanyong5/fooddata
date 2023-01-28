@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <title>::가천대학교::</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="app" class="px-3 px-md-0">
+        <div class="wrap">
+            <div class="container py-3 px-3">
+                <img src="./img/logo_cl.png" alt="" style="height:30px">
+            </div>
+        </div>
+
+        <div class="container px-md-0 bg-white rounded  py-3 p-md-5 sLayer">
+
+            <div class="row  px-md-5">
+                <div class="col-12 col-md-12 d-flex gap-1 mb-3">
+                   <!-- <input type="radio" class="btn-check" name="options-outlined" id="success-outlined1"
+                        autocomplete="off" checked v-model="sexValue" value="m">
+                    <label class="btn btn-outline-primary" for="success-outlined1">남성</label>
+ 
+                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined2"
+                        autocomplete="off" v-model="sexValue" value="w">
+                    <label class="btn btn-outline-primary" for="danger-outlined2">여성</label> -->
+
+                    <!-- <input type="radio" class="btn-check" name="options-outlined" id="success-outlined3"
+                        autocomplete="off" v-model="sexValue" value="19m">
+                    <label class="btn btn-outline-primary" for="success-outlined3">19~64 남자</label>
+
+                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined4"
+                        autocomplete="off" v-model="sexValue" value="19w">
+                    <label class="btn btn-outline-danger" for="danger-outlined4">19~64 여자</label> -->
+                </div>
+
+                <div class="col-12  mb-3">
+                    <div class="container p-0">
+                        <div class="row">
+                            <div class="col-12 d-flex gap-1 flex-wrap">
+                                <input type="radio" class="btn-check" name="options-outlined1" id="success-outlined1"
+                                autocomplete="off" checked value="501" v-model="chValue">
+                                <label class="btn btn-outline-danger px-2 btn-sm" for="success-outlined1">1~2세</label>
+            
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined2"
+                                    autocomplete="off"  value="503" v-model="chValue">
+                                <label class="btn btn-outline-danger px-2  btn-sm" for="danger-outlined2">3~8세</label>
+            
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined3"
+                                    autocomplete="off"  value="509" v-model="chValue">
+                                <label class="btn btn-outline-danger px-2  btn-sm" for="danger-outlined3">9~11세</label>
+            
+                                |
+
+                                <input type="radio" class="btn-check" name="options-outlined1" id="success-outlined4"
+                                autocomplete="off" value="112" v-model="chValue">
+                                <label class="btn btn-outline-primary px-2 btn-sm" for="success-outlined4">12-18세(남)</label>
+            
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined5"
+                                    autocomplete="off"  value="212" v-model="chValue">
+                                <label class="btn btn-outline-primary px-2  btn-sm" for="danger-outlined5">12-18세(여)</label>
+            
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined6"
+                                    autocomplete="off"  value="119" v-model="chValue">
+                                <label class="btn btn-outline-info px-2  btn-sm" for="danger-outlined6">19-64세(남)</label>
+            
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined7"
+                                    autocomplete="off"  value="219" v-model="chValue">
+                                <label class="btn btn-outline-info px-2  btn-sm" for="danger-outlined7">19-64세(여)</label>
+            
+                                <!-- <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined3"
+                                    autocomplete="off"  value="3">
+                                <label class="btn btn-outline-danger px-2  btn-sm" for="danger-outlined3">65세 이상(남)</label>
+            
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined3"
+                                    autocomplete="off"  value="3">
+                                <label class="btn btn-outline-danger px-2  btn-sm" for="danger-outlined3">65세 이상(여)</label> -->
+
+
+                                
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined8"
+                                    autocomplete="off"  value="165" v-model="chValue">
+                                <label class="btn btn-outline-success px-2  btn-sm" for="danger-outlined8">65세 이상(남)</label>
+            
+                                <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined9"
+                                    autocomplete="off"  value="265" v-model="chValue">
+                                <label class="btn btn-outline-success px-2  btn-sm" for="danger-outlined9">65세 이상(여)</label>
+
+                            </div>
+                        </div>    
+                    </div>
+                    
+
+
+
+
+
+                  
+                </div>
+                <div class="col-12 col-md-12 d-flex gap-1 mb-4 position-relative">
+                    <input type="text" placeholder="검색어를 입력하세요" class="form-control" v-model="filterText">
+                    <button class="btnWrap btn btn-outline" @click="searchData">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div class="d-none d-md-block">검색</div>
+                    </button>
+                    <div class="xmark" v-if="filterText!=''" @click="xmark">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                
+                <div class="container ">
+                    <div class="row text-center" v-if="filterText==''">
+                        <div class="col-12">
+                            검색어를 입력하세요
+                        </div>
+                    </div>
+                    <div class="row text-center p-3 p-md-0" v-else="filterText!=''">
+                        <div class="container">
+                            <div class="row mb-3 viewData p-0" v-for="item in dataView" >
+                                <div class="col-12 col-md-6 offset-md-3 mb-3 mb-md-0 position-relative">
+                                    <h4 class="title">{{item.subject}}</h4>
+                                    <img :src="`./data/img/${item.view2d}`" alt="" class="img-fluid">
+                                </div>
+                                <!-- <div class="col-12  col-md-6 position-relative">
+                                    <img :src="`./data/img/${item.view2d}`" alt="" class="img-fluid">
+                                    <div class="bg"></div>
+                                    <img src="img/play.png" alt="" style="width:20px" class="play">
+                                    
+                                </div> -->
+                                <div class="bar col-12 mt-3"></div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <img src="data/img/503_감자떡.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-12  col-md-6 position-relative">
+                            <img src="data/img/503_감자떡.jpg" alt="" class="img-fluid">
+                            <div class="bg"></div>
+                            <img src="img/play.png" alt="" style="width:20px" class="play">
+                            
+                        </div> -->
+                    </div>
+                    
+                </div>
+               
+            </div>
+            <!-- {{dataView}}<br>
+
+            {{filterText}}/ {{search}}/  / {{radioValue}} -->
+
+        </div>
+        <div class="container copy text-end pb-5">
+                © 2022 Gachon University. All Rights Reserved
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js"
+        integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module">
+        import vData from "./data.js"
+        // import vData2 from "./data2.js"
+        const photoView = {
+            data() {
+                return {
+                  arrData:vData,
+                  filterText:'',
+                  search:'',
+                  dataView:'',
+                  radioValue:'',
+                  chValue:'501'
+                }
+            },
+            methods: {
+                searchData() {
+                    console.log('클릭')
+                    this.radioValue = this.chValue;
+                    let newText = this.arrData.filter((e)=>{
+                        return e.subject.match(this.filterText)
+                    })
+                    let sData = [...newText]
+                    //console.log(sData.length)
+
+                    
+
+                    for(let i=0;i<sData.length;i++){
+                        sData[i].view2d = this.radioValue + '_' + sData[i].subject + '.jpg'
+                    }
+                    console.log(sData)
+
+                    this.dataView = sData;
+
+                    
+                },
+                xmark(){
+                    console.log('x')
+                    this.filterText = '';
+                    this.dataView = []
+                }
+            },
+            // computed:{
+            //     searchFiltered(){
+            //         return this.arrText.filter((e)=>{
+            //             return e.match(this.filterText)
+            //         })
+            //     }
+            // }
+        }
+        Vue.createApp(photoView).mount("#app")
+    </script>
+</body>
+
+</html>

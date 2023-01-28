@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <title>::가천대학교::</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="app" class="px-3 px-md-0">
+        <div class="wrap">
+            <div class="container py-3 px-3">
+                <img src="./img/logo_cl.png" alt="" style="height:30px">
+            </div>
+        </div>
+
+        <div class="container  px-md-0 bg-white rounded  py-3 p-md-5">
+
+            <div class="row  px-md-5">
+                <div class="col-12 col-md-12 d-flex gap-1 mb-3">
+                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined1"
+                        autocomplete="off" checked v-model="sexValue" value="m">
+                    <label class="btn btn-outline-primary" for="success-outlined1">남성</label>
+
+                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined2"
+                        autocomplete="off" v-model="sexValue" value="w">
+                    <label class="btn btn-outline-primary" for="danger-outlined2">여성</label>
+
+                    <!-- <input type="radio" class="btn-check" name="options-outlined" id="success-outlined3"
+                        autocomplete="off" v-model="sexValue" value="19m">
+                    <label class="btn btn-outline-primary" for="success-outlined3">19~64 남자</label>
+
+                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined4"
+                        autocomplete="off" v-model="sexValue" value="19w">
+                    <label class="btn btn-outline-danger" for="danger-outlined4">19~64 여자</label> -->
+                </div>
+
+                <div class="col-12 col-md-8 d-flex gap-1 mb-3">
+                    <input type="radio" class="btn-check" name="options-outlined1" id="success-outlined2"
+                        autocomplete="off" checked v-model="yearValue" value="12">
+                    <label class="btn btn-outline-danger px-3" for="success-outlined2">12~18세</label>
+
+                    <input type="radio" class="btn-check" name="options-outlined1" id="danger-outlined3"
+                        autocomplete="off" v-model="yearValue" value="19">
+                    <label class="btn btn-outline-danger px-3" for="danger-outlined3">19~64세</label>
+
+                  
+                </div>
+                <div class="col-12 col-md-12 d-flex gap-1 mb-4">
+                    <input type="text" placeholder="검색어를 입력하세요" class="form-control" v-model="search">
+                    <button class="btnWrap btn btn-outline" @click="searchData">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div class="d-none d-md-block">검색</div>
+                    </button>
+                </div>
+                <!-- {{sexValue}} / {{search}} / {{findView}} -->
+            </div>
+
+            <div class="container">
+                <div class="row px-md-5" v-if="findView">
+                    <div class="col-md-6 conWrap  rounded mb-1 mb-md-0 p-0">
+                        <img :src="`./data/img/${findView}`" class="pImg" style="width:110%">
+                        <div class="title">{{sSubject}}</div>
+                    </div>
+                    <div class="col-md-6 p-0">
+                        <div v-if="findView2 == ''" class="rounded d-flex" style="height:100%;justify-content: center; align-items: center;">
+                            해당 영상은 없습니다.
+                            
+                        </div>
+                        <div v-else class="mWrap rounded p-2 ">
+                            <video :src="`./data/movie/${findView2}`" muted loop class="video"></video>
+                            <div class="vbtn play" @click="mPlay" v-if="vPlay"><img src="img/play.png" alt="" style="width:20px"></div>
+                            <div class="vbtn stop" @click="mStop" v-else><img src="img/pause.png" alt="" style="width:20px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div v-else  class="row conWrap text-center">
+                    <p v-if="resultData">검색단어가 없습니다.</p>
+                    <p v-else>검색어를 입력하시면<br> 이미지와 영상이 나옵니다.</p>
+                </div>
+
+
+
+                    <!-- <div class="col-md-12 d-flex justify-content-center align-items-center p-0">
+                        <div class="conWrap">
+								<div v-if="findView">
+									<div class="title">{{sSubject}}</div>
+									<img :src="`./data/img/${findView}`" class="rounded" style="width:300px">
+								</div>
+								<div v-else  class="conWrap text-center">
+									<p v-if="resultData">검색단어가 없습니다.</p>
+                                    <p v-else>검색어를 입력하시면<br> 이미지와 영상이 나옵니다.</p>
+								</div>
+						</div>
+                    </div> -->
+                </div>
+
+                            <!-- {{radioValue}} / {{search}} -->
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js"
+        integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module">
+        import vData from "./data.js"
+        // import vData2 from "./data2.js"
+        const photoView = {
+            data() {
+                return {
+                    viewData: vData,
+                    // viewData2: vData2,
+                    sexValue: "m",
+                    yearValue:"12",
+                    radioValue:'',
+                    search: '',
+                    sSubject:'',
+                    findView: '',
+                    findView2: '',
+                    resultData:false,
+                    vPlay:true
+                }
+            },
+            methods: {
+                searchData() {
+                    this.radioValue =  this.yearValue + this.sexValue;
+                    this.findView = ''
+                    this.viewData.find(
+                        (el) => {
+                            if (el.subject == this.search) {
+                                this.sSubject = el.subject;
+                                switch(this.radioValue){
+                                    case '12m':
+                                        console.log("12m");
+                                        this.findView = el.view2d.view1
+                                        this.findView2 = el.view3d.view1
+                                        break;
+                                    case '12w':
+                                        console.log("12w");
+                                        this.findView = el.view2d.view2
+                                        this.findView2 = el.view3d.view2
+                                        break;
+                                    case '19m':
+                                        console.log("12m");
+                                        this.findView = el.view2d.view3
+                                        this.findView2 = el.view3d.view3
+                                        break;
+                                    case '19w':
+                                        console.log("12w");
+                                        this.findView = el.view2d.view4
+                                        this.findView2 = el.view3d.view4
+                                        break;
+                                }
+
+                                // console.log(el)
+                                // this.findView = el
+                                document.querySelector(".video").pause();
+                                this.vPlay = true
+                            }else{
+                                this.resultData = true
+                            }
+                        }
+                    )
+                    this.viewData2.find(
+                        (el) => {
+                            if (el.subject == this.search && el.sex == this.sexValue && el.year == this.year) {
+                                this.findView2 = el
+                            }
+                        }
+                    )
+                    this.search = ''
+                },
+                mPlay(){
+                    console.log("play")
+                    document.querySelector(".video").play();
+                    this.vPlay = false;
+                },
+                mStop(){
+                    console.log("stop")
+                    document.querySelector(".video").pause();
+                    this.vPlay = true
+                }
+
+            }
+        }
+        Vue.createApp(photoView).mount("#app")
+    </script>
+</body>
+
+</html>
